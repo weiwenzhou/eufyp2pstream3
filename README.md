@@ -20,8 +20,8 @@ Go to the go2RTC Webui and select `Config`. Enter a new configuration for the Eu
 ```
 streams:
   doorbell:
-    - exec:ffmpeg -thread_queue_size 512 -an -sn -dn -analyzeduration 1200000 -f h264 -fflags +discardcorrupt+nobuffer -flags low_delay -i tcp://127.0.0.1:63330?timeout=100000000 -thread_queue_size 512 -vn -sn -dn -analyzeduration 1200000 -fflags +discardcorrupt+nobuffer -flags low_delay -i tcp://127.0.0.1:63331?timeout=100000000 -preset ultrafast -tune zerolatency -sc_threshold 0 -fflags genpts+nobuffer+flush_packets -map 0:v -map 1:a -preset ultrafast -c:a opus -application lowdelay -frame_duration 20 -codec:v copy -tune zerolatency -movflags +faststart -g 15 -r 15 -strict -2 -rtsp_transport tcp -f rtsp {output}
-    - "exec:ffmpeg -fflags nobuffer -f alaw -ar 8000 -i pipe: -vn -sn -dn -c:a aac -b:a 24k -ar 16k -ac 2 -f adts tcp://127.0.0.1:63332#backchannel=1#killsignal=15#killtimeout=3"
+    - exec:ffmpeg -thread_queue_size 512 -an -sn -dn -analyzeduration 1200000 -f h264 -fflags +discardcorrupt+nobuffer -flags low_delay -i tcp://127.0.0.1:63333?timeout=100000000 -thread_queue_size 512 -vn -sn -dn -analyzeduration 1200000 -fflags +discardcorrupt+nobuffer -flags low_delay -i tcp://127.0.0.1:63334?timeout=100000000 -preset ultrafast -tune zerolatency -sc_threshold 0 -fflags genpts+nobuffer+flush_packets -map 0:v -map 1:a -preset ultrafast -c:a opus -application lowdelay -frame_duration 20 -codec:v copy -tune zerolatency -movflags +faststart -g 15 -r 15 -strict -2 -rtsp_transport tcp -f rtsp {output}
+    - "exec:ffmpeg -fflags nobuffer -f alaw -ar 8000 -i pipe: -vn -sn -dn -c:a aac -b:a 24k -ar 16k -ac 2 -f adts tcp://127.0.0.1:63335#backchannel=1#killsignal=15#killtimeout=3"
 ```
 This configures two ffmpeg processes. The first one is for video+audio, the second one is for Talkback.
 

@@ -16,4 +16,4 @@ options:
   eufy_security_ws_port: 3000
 schema:
   eufy_security_ws_port: port
-ports: { "63330/tcp": 63330, "63331/tcp": 63331, "63332/tcp": 63332 }
+ports: { "63333/tcp": 63333, "63334/tcp": 63334, "63335/tcp": 63335 }
